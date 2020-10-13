@@ -55,11 +55,11 @@ const getData = async () => {
         const result = document.querySelector("#result");
 
         const post = posts.find((post) => {
-            return post.userId === arg;
+            return arg === post.userId;
         });
 
         const user = users.find((user) => {
-            return user.id === arg;
+            return arg === user.id;
         });
 
             result.innerHTML += 
