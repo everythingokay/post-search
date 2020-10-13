@@ -46,10 +46,18 @@ const getUsers = async () => {
     return users;
 };
 
+const getComments = async () => {
+    const commentResponse = await fetch("https://jsonplaceholder.typicode.com/comments");
+    const comments = await commentResponse.json();
+
+    return comments;
+};
+
 
 const getData = async () => {
     const posts = await getPosts();
     const users = await getUsers();
+    const comments = await getComments();
 
         const displayData = (arg) => {
         const result = document.querySelector("#result");
@@ -73,6 +81,8 @@ const getData = async () => {
     users.find((user) => {
         displayData(user.id);
     });
+
+    // const commentSection = document.querySelector("#comment-section");
 
 };
 getData();
