@@ -70,7 +70,7 @@ const getData = async () => {
                 </div>`;
         };
 
-    users.forEach((user) => {
+    users.find((user) => {
         displayData(user.id);
     });
 
